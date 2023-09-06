@@ -1,10 +1,10 @@
-const expressSession = require("express-session");
-const bodyParser = require("body-parser");
-const express = require("express");
-const routes = require("./routes");
-const path = require("path");
-const app = express();
-
+const expressSession = require("express-session")
+const bodyParser = require("body-parser")
+const express = require("express")
+const routes = require("./routes")
+const path = require("path")
+const app = express()
+const port = 3000
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   expressSession({
@@ -15,6 +15,6 @@ app.use(
 );
 app.use(express.static(path.join(__dirname + "/public")));
 app.use('/', routes)
-app.listen(3000, () => {
-  console.log("working fine");
+app.listen(port, () => {
+  console.log(`Running in port: ${port}`);
 });
