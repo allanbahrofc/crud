@@ -1,11 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font-family-default);
+
 }
 :root{
-    --bg-color: #eee;
+    --bg: #EEEEEE;
+    --panel-bg: #E8E8E8;
+    --border-bg: #C7C7C7;
+    --search-bar-bg: #D9D9D9;
+    --search-bar-icons-color-and-text-color: #7C7C7C;
+    --search-bar-txtbox: #FFFFFF;
+    --font-family-default: 'Inter';
 }
 body{
-    background-color: var(--bg-color);
+    background-color: var(--bg);
+     
 }
