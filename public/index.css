@@ -26,3 +26,17 @@ body{
     align-items: center;
     justify-content: center;
 }
+.crud-loader {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 6px solid;
+    border-color: #c7c7c7;
+    border-right-color: #7c7c7c;
+    animation: spin 1s infinite linear;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(1turn);
+    }
+  }
