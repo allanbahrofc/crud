@@ -1,18 +1,16 @@
 const router = require("express").Router();
 const path = require("path");
-
+const authController = require("../controllers/authController");
 router.get("/auth", (req, res) => {
-  res.send("Visualizando autenticação");
+  res.sendFile(path.resolve(path.dirname('../') + '/views/auth.html'))
 });
-router.post("/auth", (req, res) => {
-  res.send("post realizado pela autenticação");
-});
+router.post("/auth", authController);
 
-router.get("/auth/:key", (req, res) => {
-  res.send(req.params.key);
+router.post("/auth/signup/:accUser", (req, res) => {
+  res.send(`registrando em ${req.params.accUser}`).status(200);
 });
-router.post("/auth/:key", (req, res) => {
-    res.send('postando a sessão para plataforma')
+router.post("/auth/signin/:accUser", (req, res) => {
+  res.send(`logando em ${req.params.accUser}`).status(200);
 });
 
 module.exports = router;
