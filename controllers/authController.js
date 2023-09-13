@@ -1,4 +1,6 @@
-// Introduce a controller to authentication requisition
+const authModel = require('../models/authModel')
+
 module.exports = (req, res) => {
-  res.send('Hello!')
+  auth = authModel.auth(req.params.method)
+  res.send(auth)
 };

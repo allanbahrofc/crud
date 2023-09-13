@@ -2,17 +2,12 @@ module.exports = {
   auth: (method) => {
     switch (method) {
       case "signup":
-        this.signup();
+        return 'registro aqui'
       case "signin":
-        this.signin();
+        return 'login aqui'
       default:
         return 404;
     }
   },
-  signup: () => {
-    console.log("Identificando que se trata de um registro.");
-  },
-  signin: () => {
-    console.log("Identificando que se trata de um login");
-  },
+  
 };
