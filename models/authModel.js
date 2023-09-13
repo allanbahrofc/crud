@@ -1,13 +1,17 @@
 module.exports = {
-  auth: (method) => {
+  auth: (method, user, pass) => {
     switch (method) {
       case "signup":
-        return 'registro aqui'
+      // Registro
+      break
       case "signin":
-        return 'login aqui'
+        if (user == "admin" && pass == "12345") {
+          return true;
+        } else {
+          return false;
+        }
       default:
         return 404;
     }
   },
-  
 };
