@@ -1,6 +1,6 @@
 const storageManager = require("handy-storage");
 const fileReader = require("fs");
-const { json } = require("body-parser");
+const path = require("path");
 
 const storage = new storageManager({
   beautify: true,
@@ -10,20 +10,24 @@ storage.connect("../data/users.json");
 
 const setUserCredencial = (user, pass) => {
   storage.setState({
-    user: {
+    account: {
       username: user,
       password: pass,
     },
   });
 };
-const getUserCredencial = () => {
+var getUserCredencial = () => {
+  let credencialUser;
   fileReader.readFile("../data/users.json", (err, data) => {
     if (err) {
       console.log(err);
     } else {
-      jsonFile = JSON.parse(data);
-      return jsonFile.user;
+      this = JSON.parse(data);
+      return credencialUser;
     }
   });
+  return credencialUser
 };
-(module.exports = setUserCredencial), getUserCredencial;
+// Remodelar isso TODO
+const cr = getUserCredencial();
+console.log(cr);
