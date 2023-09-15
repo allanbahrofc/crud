@@ -22,11 +22,11 @@ var getUserCredencial = () => {
     if (err) {
       console.log(err);
     } else {
-      this = JSON.parse(data);
+      JSON.parse(data);
       return credencialUser;
     }
   });
-  return credencialUser
+  return credencialUser;
 };
 // Remodelar isso TODO
 const cr = getUserCredencial();
