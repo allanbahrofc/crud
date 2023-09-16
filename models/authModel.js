@@ -1,13 +1,13 @@
-const credencialUser = require("./credencialModel");
+const credencialModel = require("./credencialModel");
 
 module.exports = {
-  auth: (method, user, pass) => {
+  auth: async (method, user, pass) => {
     switch (method) {
       case "signup":
         // Registro
-        credencialUser.getUserCredentials();
-        console.log(credencialUser.username);
-        console.log(credencialUser.password);
+        await credencialModel.getUserCredentials().then((user) => {
+          console.log(user.user.account);
+        });
         return "registro";
       case "signin":
         if (user == "admin" && pass == "12345") {

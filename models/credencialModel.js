@@ -1,5 +1,6 @@
+const { Console } = require("console");
 const storageManager = require("handy-storage");
-const fileReader = require("fs");
+const fileReader = require("fs").promises;
 const path = require("path");
 // const path = require("path");
 const filePath = path.resolve(__dirname, "../data/users.json");
@@ -10,14 +11,11 @@ const storage = new storageManager({
 storage.connect(filePath);
 
 module.exports = {
-  username: "",
-  password: "",
-  getUserCredentials: () => {
+  getUserCredentials: async () => {
     try {
-      const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
-      const user = data.account;
-      this.username = user.username;
-      this.password = user.password;
+      const data = await fileReader.readFile(filePath, "utf8");
+      const user = JSON.parse(data);
+      return { user };
     } catch (err) {
       console.error("Erro ao ler o arquivo JSON:", err);
     }
