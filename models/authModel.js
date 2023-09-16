@@ -5,7 +5,7 @@ module.exports = {
     switch (method) {
       case "signup":
         // Registro
-        credencialUser.getUserCredencial();
+        credencialUser.getUserCredentials();
         console.log(credencialUser.username);
         console.log(credencialUser.password);
         return "registro";
