@@ -1,15 +1,17 @@
-const { getUserCredencial, setUserCredencial } = require("./credencialModel");
+const credencialUser = require("./credencialModel");
 
-actualCredencial = getUserCredencial()
 module.exports = {
   auth: (method, user, pass) => {
     switch (method) {
       case "signup":
         // Registro
+        credencialUser.getUserCredencial();
+        console.log(credencialUser.username);
+        console.log(credencialUser.password);
         return "registro";
       case "signin":
         if (user == "admin" && pass == "12345") {
-          return actualCredencial.username;
+          return true;
         } else {
           return false;
         }

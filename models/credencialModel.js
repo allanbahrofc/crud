@@ -1,33 +1,29 @@
 const storageManager = require("handy-storage");
 const fileReader = require("fs");
 const path = require("path");
+// const path = require("path");
 
 const storage = new storageManager({
   beautify: true,
 });
 
-storage.connect("../data/users.json");
+storage.connect(path.resolve(path.dirname("../") + "/data/users.json"));
 
-const setUserCredencial = (user, pass) => {
-  storage.setState({
-    account: {
-      username: user,
-      password: pass,
-    },
-  });
+module.exports = {
+  username: "",
+  password: "",
+  getUserCredencial: () => {
+    fileReader.readFile(
+      path.resolve(path.dirname("../") + "/data/users.json"),
+      (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          data = JSON.parse(data).account;  
+          this.username = data.username;
+          this.password = data.password;
+        }
+      }
+    );
+  },
 };
-var getUserCredencial = () => {
-  let credencialUser;
-  fileReader.readFile("../data/users.json", (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      JSON.parse(data);
-      return credencialUser;
-    }
-  });
-  return credencialUser;
-};
-// Remodelar isso TODO
-const cr = getUserCredencial();
-console.log(cr);
