@@ -1,6 +1,9 @@
-const authModel = require('../models/authModel')
+const authModel = require("../models/authModel");
 
 module.exports = (req, res) => {
-  auth = authModel.auth(req.params.method, req.body.txtUser, req.body.txtPass)
-  res.send(auth)
+  authModel
+    .auth(req.params.method, req.body.txtUser, req.body.txtPass)
+    .then((code) => {
+      res.send(code);
+    });
 };

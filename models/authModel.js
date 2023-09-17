@@ -4,17 +4,16 @@ module.exports = {
   auth: async (method, user, pass) => {
     switch (method) {
       case "signup":
-        // Registro
-        await credencialModel.getUserCredentials().then((user) => {
-          console.log(user.user.account);
-        });
-        return "registro";
+        return 201;
       case "signin":
-        if (user == "admin" && pass == "12345") {
-          return true;
-        } else {
-          return false;
-        }
+        const auth = await credencialModel.getUserCredentials().then((data) => {
+          if (data.username == user && data.password == pass) {
+            return 202;
+          } else {
+            return 406;
+          }
+        });
+        return auth;
       default:
         return 404;
     }
