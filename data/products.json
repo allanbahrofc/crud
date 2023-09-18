@@ -1,0 +1,14 @@
+{
+  "productOne": {
+    "productID": 0,
+    "productName": "Kit de Ferramentas c/ 100pcs - Maleta",
+    "productQntd": 1000,
+    "productValue": 120
+  },
+  "productTwo": {
+    "productID": 1,
+    "productName": "Kit de Ferramentas c/ 100pcs s/ Maleta",
+    "productQntd": 1000,
+    "productValue": 80
+  }
+}
