@@ -1,0 +1,35 @@
+.txtBox{
+    background-color: #101010;
+    color: #BCBCBC;
+    border: 1px solid var(--border-bg);
+    width: 80%;
+    height: 12%;
+    margin: 0.5rem;
+    padding-left: 0.65rem;
+}
+
+.title-h2{
+    color: #BCBCBC;
+    padding: 1rem;
+}
+.subtitle-p{
+    padding: 1rem;
+    color: #6F6F6F;
+}
+input[type="submit"]{
+    background-color: #101010;
+    border: 1px solid var(--border-bg);
+    padding: 1rem;
+    color: #6F6F6F;
+    margin: 0.5rem;
+    
+}
+input[type="submit"]:hover{
+    background-color: #151515;
+    cursor: pointer;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}

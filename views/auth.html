@@ -5,26 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Authentication</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="auth.css" />
   </head>
   <body>
     <main class="fx-al-center-100vw-vh">
       <form class="box-al-center-100vw-vh" id="formAuth" method="post">
-        <input type="text" name="txtUser" />
-        <input type="password" name="txtPass" />
-        <input
-          type="submit"
-          name="btnSignin"
-          id="btnSignin"
-          formaction="/auth/signin"
-          value="Entrar"
-        />
-        <input
-          type="submit"
-          name="btnSignup"
-          id="btnSignup"
-          formaction="/auth/signup"
-          value="Registrar"
-        />
+        <h2 class="title-h2">Insira suas credenciais</h2>
+        <p class="subtitle-p">
+          O preenchimento das informações corretas recorrente a sua conta ou
+          crie uma!
+        </p>
+        <input class="txtBox" placeholder="Usename" id="txtUser" type="text" name="txtUser" />
+        <input class="txtBox" placeholder="Password" id="txtPass" type="password" name="txtPass" />
+        <section class="btns">
+          <input
+            type="submit"
+            name="btnSignin"
+            id="btnSignin"
+            formaction="/auth/signin"
+            value="Entrar"
+          />
+          <input
+            type="submit"
+            name="btnSignup"
+            id="btnSignup"
+            formaction="/auth/signup"
+            value="Registrar"
+          />
+        </section>
       </form>
     </main>
   </body>
