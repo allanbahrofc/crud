@@ -19,10 +19,21 @@ module.exports = {
       console.error("Erro ao ler o arquivo JSON:", err);
     }
   },
-  setUserCredentials: async () => {
+  setUserCredentials: async (user, pass) => {
     try {
+      if (user != "" && pass != "") {
+        storage.setState({
+          account: {
+            username: user,
+            password: pass,
+          },
+        });
+        return 201;
+      } else {
+        return 204;
+      }
     } catch (err) {
-      console.error(err);
+      return 404;
     }
   },
 };

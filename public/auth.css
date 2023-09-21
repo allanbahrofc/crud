@@ -11,15 +11,13 @@
 .title-h2{
     color: #BCBCBC;
     padding: 1rem;
-}
-.subtitle-p{
-    padding: 1rem;
-    color: #6F6F6F;
+    margin: 1rem;
 }
 input[type="submit"]{
     background-color: #101010;
     border: 1px solid var(--border-bg);
     padding: 1rem;
+    width: 10vw;
     color: #6F6F6F;
     margin: 0.5rem;
     

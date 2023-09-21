@@ -4,18 +4,23 @@ module.exports = {
   auth: async (method, user, pass) => {
     switch (method) {
       case "signup":
-        return 201;
+        let creation = await credencialModel
+          .setUserCredentials(user, pass)
+          .then((code) => {
+            return code;
+          });
+        return creation;
       case "signin":
-        const auth = await credencialModel.getUserCredentials().then((data) => {
+        let auth = await credencialModel.getUserCredentials().then((data) => {
           if (data.username == user && data.password == pass) {
             return 202;
           } else {
-            return 406;
+            return 401;
           }
         });
         return auth;
       default:
-        return 404;
+        return 400;
     }
   },
 };
