@@ -31,12 +31,12 @@ body{
 }
 .box-al-center-100vw-vh{
   background-color: var(--panel-bg);
-  width: 30%;
-  height: 60%;
+  width: 75%;
+  height: 75%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  /* align-items: center;
+  justify-content: center; */
   text-align: center;
   border: 1px solid var(--border-bg);
 }
