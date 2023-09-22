@@ -3,5 +3,5 @@ CRUD é uma plataforma desenvolvida planejada para funcionar como manipulação 
 
 |  Ferramentas  |  Link de Acesso  |
 |---------|---------|
-| ![Figma Logo](https://img.shields.io/badge/Figma-000000?style=for-the-badge&logo=figma&logoColor=white) |  Link   |
+| ![Figma Logo](https://img.shields.io/badge/Figma-000000?style=for-the-badge&logo=figma&logoColor=white) |  [Figma](https:/www.google.com)   |
 | ![Notion Logo](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white) |  Link   |
