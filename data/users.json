@@ -1,6 +1,3 @@
 {
-    "account": {
-        "username": "admin",
-        "password": "admin"
-    }
+    "account": { "username": "aa", "password": "aaa" }
 }

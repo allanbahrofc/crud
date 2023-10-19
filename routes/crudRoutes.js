@@ -10,9 +10,9 @@ credencialModel.getUserCredentials().then((data) => {
 // Rota para Visualização Geral
 router.get("/c/:user/", (req, res) => {
   if (user == req.params.user) {
-    res.send(`Logado como: ${req.params.user}`);
+    res.sendFile(path.resolve(path.dirname("../") + "/views/dashboard.html"));
   } else {
-    res.redirect("/");
+    res.sendFile(path.resolve(path.dirname("../") + "/views/404.html"));
   }
 });
 

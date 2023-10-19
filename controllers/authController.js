@@ -1,4 +1,5 @@
 const authModel = require("../models/authModel");
+const path = require("path")
 const credencialModel = require("../models/credencialModel");
 module.exports = (req, res) => {
   authModel
@@ -7,7 +8,7 @@ module.exports = (req, res) => {
       switch (code) {
         // Registro
         case 201:
-          res.redirect("/");
+          res.sendFile(path.resolve(path.dirname("../") + "/views/201.html"));
           break;
         case 404:
           res.send("Erro de Request");
@@ -19,11 +20,11 @@ module.exports = (req, res) => {
           break;
 
         case 204:
-          res.redirect("/auth");
+          res.sendFile(path.resolve(path.dirname("../") + "/views/404.html"));
           break;
 
         case 401:
-          res.redirect("/auth");
+          res.sendFile(path.resolve(path.dirname("../") + "/views/404.html"));
           break;
 
         default:
